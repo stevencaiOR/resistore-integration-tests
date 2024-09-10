@@ -8,13 +8,24 @@ class BasePage:
         self.driver.get(self.url)
 
     @property
+    def nav_home(self):
+        return self.driver.find_element("xpath","//a[text()='Home']")
+
+    @property
     def nav_login(self):
-        return self.driver.find_element("css selector", f"[href='login/']")
+        return self.driver.find_element("css selector", f"[href$='login/']")
 
     def navigate(self, tab):
         self.open()
-        tabLink = self.driver.find_element("css selector", f"[href='{tab}/']")
+        tabLink = self.driver.find_element("css selector", f"[href$='{tab}/']")
         tabLink.click()
+
+    def navigate_home(self):
+        from .home_page import HomePage
+        
+        self.open()
+        self.nav_home.click()
+        return HomePage(self.driver)
     
     def navigate_login(self):
         from .login_page import LoginPage
