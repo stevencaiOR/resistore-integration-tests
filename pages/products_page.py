@@ -12,7 +12,11 @@ class ProductsPage(BasePage):
     def select_product(self, productName):
         from .product_page import ProductPage
 
+        # Find anchor element to corresponding product image
         product = self.driver.find_element("css selector",f"[href^='../products/']:has(> [alt*='{productName}'])")
+
+        # Store anchor href in product URL for ProductPage instantiation
         productUrl = product.get_attribute("href")
+        
         product.click()
         return ProductPage(self.driver, productUrl)
