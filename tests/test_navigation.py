@@ -17,7 +17,7 @@ class TestNavigation:
 
         assert self.driver.current_url == f"https://resi.store/{tab}/"
 
-    @pytest.mark.reg
+    @pytest.mark.smoke
     @pytest.mark.parametrize("productName",[
         ("10k Ohm Resistor"),
         ("220 Ohm Resistor"),

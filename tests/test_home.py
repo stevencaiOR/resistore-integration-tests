@@ -3,6 +3,7 @@ from pages.home_page import HomePage
 
 @pytest.mark.usefixtures("driver_init")
 class TestHome:
+    @pytest.mark.smoke
     def test_HomeVisibility(self):
         home_page = HomePage(self.driver)
         home_page.open()

@@ -3,6 +3,7 @@ from pages.home_page import HomePage
 
 @pytest.mark.usefixtures("driver_init")
 class TestSearch:
+    @pytest.mark.smoke
     @pytest.mark.parametrize("query",[
         ("resistor"),
         ("capacitor")
