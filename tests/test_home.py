@@ -9,5 +9,4 @@ class TestHome:
 
         statusPrefix = "The physical store is currently "
         assert home_page.image_resistore is not None
-        assert home_page.image_osurc is not None
         assert home_page.status.text[:len(statusPrefix)] == statusPrefix

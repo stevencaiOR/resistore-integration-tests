@@ -10,10 +10,6 @@ class HomePage(BasePage):
         return self.driver.find_element("css selector", "[alt='ResiStore!']")
     
     @property
-    def image_osurc(self):
-        return self.driver.find_element("css selector", "[alt='OSURC!']")
-    
-    @property
     def status(self):
         return self.driver.find_element("css selector", ".avalibility-banner1 h3")
     
